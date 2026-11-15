@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" width="120" height="32">
+  <g fill="none" fill-rule="evenodd">
+    <!-- Play/Workflow Icon background -->
+    <rect width="28" height="28" x="2" y="2" fill="#FF0000" rx="6"/>
+    <!-- Play triangle -->
+    <polygon points="12,9 21,16 12,23" fill="#FFFFFF"/>
+    <!-- Logo Text "Workflow" -->
+    <text x="38" y="21" fill="#F1F1F1" font-family="Roboto, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="-0.5">Workflow</text>
+  </g>
+</svg>

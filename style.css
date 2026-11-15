@@ -1,0 +1,168 @@
+:root {
+    --yt-base-background: #0f0f0f;
+    --yt-raised-background: #212121;
+    --yt-card-hover: #272727;
+    --yt-border: #3f3f3f;
+    --yt-text-primary: #f1f1f1;
+    --yt-text-secondary: #aaa;
+    --yt-red: #ff0000;
+    --yt-red-hover: #cc0000;
+    --yt-chip-bg: rgba(255, 255, 255, 0.1);
+    --yt-chip-bg-hover: rgba(255, 255, 255, 0.2);
+    --transition: all 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: var(--yt-base-background);
+    color: var(--yt-text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* YouTube Header / Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    height: 56px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--yt-base-background);
+    border-bottom: 1px solid var(--yt-border);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: none !important;
+    padding: 0 !important;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-links a {
+    color: var(--yt-text-primary);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: var(--yt-chip-bg);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    background-color: var(--yt-chip-bg-hover);
+}
+
+.nav-links a.active {
+    color: #0f0f0f;
+    background-color: var(--yt-text-primary);
+    font-weight: 600;
+}
+
+/* Container & Main Content */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 88px 24px 40px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+#content, #comments-content, #users-content {
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--yt-text-primary);
+}
+
+.subtitle {
+    color: var(--yt-text-secondary);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 24px 0 16px 0;
+    color: var(--yt-text-primary);
+}
+
+p {
+    color: var(--yt-text-secondary);
+    line-height: 1.5;
+}
+
+/* Content List & Item Cards (YouTube Feed / Video Card style) */
+.content-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.item-card {
+    background-color: var(--yt-raised-background);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.item-card:hover {
+    background-color: var(--yt-card-hover);
+    border-color: var(--yt-border);
+}
+
+.item-card h3 {
+    color: var(--yt-text-primary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.item-card p {
+    color: var(--yt-text-secondary);
+    font-size: 14px;
+}
+
+/* Error and Loading states */
+.error {
+    color: #ff8080;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .content-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
