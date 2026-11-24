@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow - Minha Conta & Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <a href="main.html" class="logo-link">
+            <img src="logo.svg" alt="Workflow Logo" height="30px">
+        </a>
+        <div class="nav-links" style="display: flex; align-items: center; gap: 12px;">
+            <a id="Home" href="main.html">Página Inicial</a>
+            <a id="Post" href="user.html">Usuários</a>
+            <a id="Comments" href="comments.html">Comentários</a>
+            <a id="filter" href="filter.html">🔍</a>
+            <a id="create-btn" href="#" onclick="openCreateModal(); return false;" style="font-weight: bold; font-size: 18px;" title="Criar Post / Foto">+</a>
+            <a id="Account" href="account.html" class="active" style="padding: 4px; background: none;">
+                <img id="nav-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Admin" alt="Perfil" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--yt-border);" />
+            </a>
+        </div>
+    </nav>
+    <main class="container">
+        <div id="account-content">
+            <h1>Minha Conta & Acesso Admin</h1>
+            <p class="subtitle">Gerencie seu perfil de Administrador e publique conteúdos.</p>
+            
+            <div class="item-card" style="gap: 16px; margin-bottom: 24px;">
+                <h3>Status do Administrador</h3>
+                <div id="admin-status-box"></div>
+                <div style="display: flex; gap: 12px; margin-top: 12px;">
+                    <button id="login-admin-btn" style="padding: 10px 16px; background: var(--yt-red); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Entrar como Admin (rhbat)</button>
+                    <button id="logout-btn" style="padding: 10px 16px; background: var(--yt-chip-bg); color: var(--yt-text-primary); border: none; border-radius: 8px; cursor: pointer;">Sair</button>
+                </div>
+            </div>
+
+            <div class="item-card" style="gap: 12px;">
+                <h3>Criar Nova Publicação / Foto</h3>
+                <form id="create-form" style="display: flex; flex-direction: column; gap: 12px;">
+                    <select id="create-type" style="padding: 10px; background: var(--yt-base-background); color: var(--yt-text-primary); border: 1px solid var(--yt-border); border-radius: 8px;">
+                        <option value="post">Publicação (Post)</option>
+                        <option value="photo">Foto</option>
+                    </select>
+                    <input type="text" id="create-title" placeholder="Título / Legenda..." style="padding: 10px; background: var(--yt-base-background); color: var(--yt-text-primary); border: 1px solid var(--yt-border); border-radius: 8px;" required />
+                    <textarea id="create-body" placeholder="Conteúdo do post ou URL da foto (opcional)..." style="padding: 10px; background: var(--yt-base-background); color: var(--yt-text-primary); border: 1px solid var(--yt-border); border-radius: 8px; min-height: 80px;"></textarea>
+                    <button type="submit" style="padding: 10px 16px; background: var(--yt-text-primary); color: #0f0f0f; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Publicar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
